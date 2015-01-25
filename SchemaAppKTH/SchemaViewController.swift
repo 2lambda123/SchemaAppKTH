@@ -76,8 +76,8 @@ class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebV
         
         webView.hidden = false
     }
-    
 
+    
     @IBAction func longPressDetected(sender: AnyObject){
         
         if sender.state == UIGestureRecognizerState.Began {

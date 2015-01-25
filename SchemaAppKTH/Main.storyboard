@@ -51,13 +51,21 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="wDz-qj-a9h"/>
                                 </connections>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="App created by Karl-Johan Drougge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqR-0w-cln">
+                                <rect key="frame" x="16" y="28" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oqR-0w-cln" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="3g8-GB-9yz"/>
                             <constraint firstItem="224-gp-Fw5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="48G-6n-RaL"/>
                             <constraint firstAttribute="trailing" secondItem="224-gp-Fw5" secondAttribute="trailing" constant="60" id="8Il-OV-jWw"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XOe-MT-ijf" secondAttribute="bottom" id="HBp-Qo-JCA"/>
                             <constraint firstAttribute="trailing" secondItem="XOe-MT-ijf" secondAttribute="trailing" id="NXQ-da-iHA"/>
+                            <constraint firstItem="oqR-0w-cln" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="UUt-CJ-2bq"/>
                             <constraint firstItem="XOe-MT-ijf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="bWm-Be-VuB"/>
                             <constraint firstAttribute="centerY" secondItem="XOe-MT-ijf" secondAttribute="centerY" id="cM2-ln-tpw"/>
                             <constraint firstItem="XOe-MT-ijf" firstAttribute="top" secondItem="224-gp-Fw5" secondAttribute="bottom" id="i3q-jW-hSK"/>
