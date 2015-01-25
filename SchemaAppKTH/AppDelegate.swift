@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") == nil {
+            NSUserDefaults.standardUserDefaults().setObject("TIDAA_3", forKey: "SavedModule")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        let containerViewController = ContainerViewController()
+        
+        window!.rootViewController = containerViewController
+        window!.makeKeyAndVisible()
+
+        
         return true
     }
 
