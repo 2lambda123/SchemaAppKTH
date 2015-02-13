@@ -123,5 +123,4 @@ private extension UIStoryboard {
     class func leftViewController() -> LeftViewController? {
         return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? LeftViewController
     }
-    
 }

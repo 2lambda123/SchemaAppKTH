@@ -25,6 +25,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         resultTableView.delegate = self
         resultTableView.dataSource = self
         

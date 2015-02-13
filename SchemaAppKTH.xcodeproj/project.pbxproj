@@ -16,6 +16,7 @@
 		2B4DE57B1A696BC000CA1A1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DE57A1A696BC000CA1A1D /* Images.xcassets */; };
 		2B4DE57E1A696BC000CA1A1D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DE57C1A696BC000CA1A1D /* LaunchScreen.xib */; };
 		2B4DE58A1A696BC000CA1A1D /* SchemaAppKTHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DE5891A696BC000CA1A1D /* SchemaAppKTHTests.swift */; };
+		2BBD43F41A8CEFBE001C6411 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD43F31A8CEFBE001C6411 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		2B4DE5831A696BC000CA1A1D /* SchemaAppKTHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchemaAppKTHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4DE5881A696BC000CA1A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4DE5891A696BC000CA1A1D /* SchemaAppKTHTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaAppKTHTests.swift; sourceTree = "<group>"; };
+		2BBD43F31A8CEFBE001C6411 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				2B205FD01A74479B001D4D09 /* ContainerViewController.swift */,
 				2B205FCC1A74475E001D4D09 /* SchemaViewController.swift */,
 				2B205FCE1A74476B001D4D09 /* LeftViewController.swift */,
+				2BBD43F31A8CEFBE001C6411 /* Reachability.swift */,
 				2B205FD71A7476C8001D4D09 /* Main.storyboard */,
 				2B4DE57A1A696BC000CA1A1D /* Images.xcassets */,
 				2B4DE57C1A696BC000CA1A1D /* LaunchScreen.xib */,
@@ -170,6 +173,7 @@
 				TargetAttributes = {
 					2B4DE56D1A696BC000CA1A1D = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 48786RLNS9;
 					};
 					2B4DE5821A696BC000CA1A1D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -225,6 +229,7 @@
 				2B205FCF1A74476B001D4D09 /* LeftViewController.swift in Sources */,
 				2B4DE5741A696BC000CA1A1D /* AppDelegate.swift in Sources */,
 				2B205FD11A74479B001D4D09 /* ContainerViewController.swift in Sources */,
+				2BBD43F41A8CEFBE001C6411 /* Reachability.swift in Sources */,
 				2B205FCD1A74475E001D4D09 /* SchemaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SchemaAppKTH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SchemaAppKTH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

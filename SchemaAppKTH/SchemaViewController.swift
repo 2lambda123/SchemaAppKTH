@@ -11,7 +11,6 @@ import UIKit
 protocol SchemaViewControllerDelegate{
     func toggleLeftPanel()
     func collapseSidePanels()
-    //func refreshWithNewValues(module: String)
 }
 
 class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebViewDelegate,UIScrollViewDelegate ,  UIGestureRecognizerDelegate {
@@ -28,20 +27,33 @@ class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        start()
+    }
     
-        webView.delegate = self
-        webView.hidden = true
-        webView.scrollView.delegate = self
-        
-        labelContainer.layer.shadowOpacity = 0.8
-    
-        var tap = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
-        tap.numberOfTapsRequired = 1
-        tap.delegate = self
-        
-        webView.addGestureRecognizer(tap)
-        
-        refreshWithNewValues(NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") as String)
+    func start(){
+        if Reachability.isConnectedToNetwork() {
+            webView.delegate = self
+            webView.hidden = true
+            webView.scrollView.delegate = self
+            
+            myLabel.hidden = false
+            labelContainer.layer.shadowOpacity = 0.8
+            
+            var tap = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+            tap.numberOfTapsRequired = 1
+            tap.delegate = self
+            
+            webView.addGestureRecognizer(tap)
+            
+            refreshWithNewValues(NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") as String)
+        } else {
+            activityIndicator.stopAnimating()
+            activityIndicator.hidesWhenStopped = true
+            
+            myLabel.text = "No connection"
+        }
     }
     
     func handleTapGesture(tapGesture: UITapGestureRecognizer){
@@ -172,12 +184,31 @@ class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebV
         if module != schedule{
             NSUserDefaults.standardUserDefaults().setObject(schedule, forKey: "SavedModule")
             NSUserDefaults.standardUserDefaults().synchronize()
-            refreshWithNewValues(schedule)
+            
+            if Reachability.isConnectedToNetwork() {
+                refreshWithNewValues(schedule)
+            } else {
+                println("no internet 3")
+            }
         }
         delegate?.collapseSidePanels()
     }
     @IBAction func refresh_clicked(sender: AnyObject) {
-        refreshWithNewValues(NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") as String)
+        if Reachability.isConnectedToNetwork() {
+            refreshWithNewValues(NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") as String)
+        } else {
+            
+            println("no internet 2 ")
+            
+            
+            let alertController = UIAlertController(title: nil, message: "There was a problem with the connection.", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in // Do nothing
+            }
+            
+            alertController.addAction(cancelAction)
+            
+            self.view.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func settings_clicked(sender: AnyObject) {
@@ -188,8 +219,6 @@ class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebV
             isLeftPanelOpen = true
             webView.scrollView.scrollEnabled = false
         }
-        
-        
         
         delegate?.toggleLeftPanel()
     }
