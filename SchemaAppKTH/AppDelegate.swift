@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
+        
         let containerViewController = ContainerViewController()
         
         window!.rootViewController = containerViewController

@@ -193,6 +193,7 @@ class SchemaViewController: UIViewController, LeftViewControllerDelegate, UIWebV
         }
         delegate?.collapseSidePanels()
     }
+    
     @IBAction func refresh_clicked(sender: AnyObject) {
         if Reachability.isConnectedToNetwork() {
             refreshWithNewValues(NSUserDefaults.standardUserDefaults().objectForKey("SavedModule") as String)
